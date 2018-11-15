@@ -93,6 +93,9 @@ public class Test {
 		System.out.println("f("+x2+")=" + p11 + " = " + p11.f(x2));
 		
 		
+		Polynom l = new Polynom("x");
+		System.out.println(l.area(-1, 1, 0.01));
+		
 		
 		
 	}

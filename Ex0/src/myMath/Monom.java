@@ -16,8 +16,13 @@ import javax.management.RuntimeErrorException;
 public class Monom implements function{
 	
 	public Monom(double a, int b){
+		if (b>=0) {
 		this.set_coefficient(a);
 		this.set_power(b);
+		}
+		else {
+			throw new RuntimeException("The power of the monom must be positive (>=0)");
+		}
 	}
 	public Monom(Monom ot) {
 		this(ot.get_coefficient(), ot.get_power());
@@ -111,8 +116,14 @@ public class Monom implements function{
 	 * A derivative operation of a monom.
 	 */
 	public void derivative() { //calculates the derivative the Monom like: 2X^2 = (2*2)X^(2-1) = 4X^1
+		if (this.get_power() > 0) {
 		this._coefficient = get_coefficient() * this.get_power(); //multiply the power with the coefficient.
 		this._power = get_power() - 1;  // reduce the power by 1.
+		}
+		else {
+			this._coefficient = 0;
+			this._power = 0;
+		}
 	}
 	
 	/**

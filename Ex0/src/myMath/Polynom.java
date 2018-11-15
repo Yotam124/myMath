@@ -206,13 +206,17 @@ public class Polynom implements Polynom_able{
 	 * (i) x0<=x2<=x2 & (ii) |f(x2)|<eps
 	 */
 	public double root(double x0, double x1, double eps) {
-		
-		for (double i=x0 ; i<=x1 ; i+=0.0001) {
-			if (Math.abs(this.f(i)) < eps) {
-				return this.f(i);
-			}
+		double mid = (x0 + x1)/2;
+		if (Math.abs(f(mid)) < eps) {
+			return f(mid);
 		}
-		return Integer.MAX_VALUE;
+		else if (f(mid)>0 && f(x0)<0 || f(mid)<0 && f(x0)>0) {
+			return root(x0, mid , eps);
+		}
+		else {
+			return root(mid, x1 , eps);
+		}
+		
 	}
 	
 	/**
@@ -251,7 +255,7 @@ public class Polynom implements Polynom_able{
 		
 		double ans = 0;
 		double area = 0;
-		for (double i=x0 ; i<=x1 ; i+=eps) {
+		for (double i=x0 ; i<x1 ; i+=eps) {
 			ans = this.f(i);
 			area += ans*eps;
 			ans = 0;
