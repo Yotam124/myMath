@@ -179,7 +179,7 @@ class TestPolynom {
 
 	@Test
 	void testIteretor() {
-		Polynom p = new Polynom("2x^1+3x^2");
+		Polynom p1 = new Polynom("2x^1+3x^2");
 		Iterator<Monom> iter = p1.iteretor();
 		Polynom p2 = new Polynom();
 		while(iter.hasNext()) {
