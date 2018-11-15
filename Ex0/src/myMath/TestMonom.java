@@ -22,7 +22,7 @@ class TestMonom {
 	public void testMonomMonom() { 
 		Monom ot = new Monom();
 		Monom m = new Monom(ot);
-		if (m.get_coefficient() != ot.get_coefficient() && m.get_power() != ot.get_power()) {
+		if (m.get_coefficient() != ot.get_coefficient() || m.get_power() != ot.get_power()) {
 			fail("Coefficient and Power are not equal to the Copyed Monom (ot)");
 		}
 	}
