@@ -18,7 +18,7 @@ class TestPolynom {
 	void testPolynom() {
 		Polynom p = new Polynom();
 		if (p.isZero() == false) {
-			fail("The polynomial should be equal to 0 because it does not contain any monomers");
+			fail("The polynomial should be equal to 0 because it does not contain any monoms");
 		}
 	}
 

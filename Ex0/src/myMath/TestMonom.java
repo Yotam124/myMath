@@ -46,16 +46,6 @@ class TestMonom {
 	}
 	
 	@Test
-	public void testMonomStringSyntax() {
-		try {
-		Monom m = new Monom("2xx^6");
-		fail("Invalid syntax");
-		} catch (Exception e) {
-			System.out.println("Good");
-		}
-	}
-	
-	@Test
 	public void testF() {
 		int a = 2;
 		int b = 4;
